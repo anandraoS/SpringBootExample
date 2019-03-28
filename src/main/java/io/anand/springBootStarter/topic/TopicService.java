@@ -22,4 +22,13 @@ public class TopicService {
 	public void addTopic(Topic topic) {
 		this.allTopics.add(topic);
 	}
+
+	public void updateTopic(String id, Topic topic) {
+		for (int i = 0; i < allTopics.size(); i++) {
+			if (allTopics.get(i).getId().equals(id)) {
+				allTopics.set(i, topic);
+				return;
+			}
+		}
+	}
 }
